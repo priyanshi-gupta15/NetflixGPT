@@ -1,12 +1,21 @@
 1. Create a React App with Vite
+  ```bash
    npm create vite@latest my-app
+   ```
+
 2.Navigate to Project & Install Dependencies
+ ```bash
    cd my-app
    npm install
+   ```
+
 3. Setup Tailwind CSS
+   ```bash
    npm install -D tailwindcss @tailwindcss/vite
+   ```
 
    Update vite.config.js:
+   ```js
    import { defineConfig } from 'vite'
    import react from '@vitejs/plugin-react'
    import tailwindcss from '@tailwindcss/vite'
@@ -14,13 +23,18 @@
    export default defineConfig({
    plugins: [react(), tailwindcss()],
    })
+   ```
 
    update index.css
+   ```css
    @import "tailwindcss"
    @tailwind utilities;
+   ```
   
 4. Install Redux Toolkit & React Redux
+  ```bash
    npm install @reduxjs/toolkit react-redux
+   ```
 
 
    //how to manage redux
@@ -28,7 +42,7 @@
 5. Setup Redux Store
 
     Create src/app/store.js:
-    
+    ```js
     import { configureStore } from '@reduxjs/toolkit'
     import counterReducer from '../features/counterSlice'
     
@@ -37,11 +51,12 @@
         counter: counterReducer,
       },
     })
+    ```
 
 6. Create a Slice
+
     src/features/counterSlice.js
-
-
+    ```js
     import { createSlice } from '@reduxjs/toolkit'
 
      const initialState = {
@@ -60,10 +75,11 @@
      
      export const { increment, decrement, incrementByAmount } = counterSlice.actions
      export default counterSlice.reducer
-    
+    ```
 ⚡ 7. Provide Store to App
 
     Edit main.jsx:
+    ```jsx
     
     import React from 'react'
     import ReactDOM from 'react-dom/client'
@@ -78,9 +94,11 @@
         <App />
       </Provider>
     )
-
+```
 8. Use Redux in a Component
+
    src/App.jsx
+   ```jsx
    import { useSelector, useDispatch } from 'react-redux'
    import { increment, decrement } from './features/counterSlice'
    
@@ -100,6 +118,7 @@
    }
    
    export default App
+   ```
 
 9. Run the App
    npm run dev
