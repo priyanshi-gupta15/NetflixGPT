@@ -8,7 +8,6 @@
    cd my-app
    npm install
    ```
-
 3. Setup Tailwind CSS
    ```bash
    npm install -D tailwindcss @tailwindcss/vite
@@ -79,7 +78,7 @@
 ⚡ 7. Provide Store to App
 
     Edit main.jsx:
-    ```jsx
+    ```js
     
     import React from 'react'
     import ReactDOM from 'react-dom/client'
@@ -98,7 +97,7 @@
 8. Use Redux in a Component
 
    src/App.jsx
-   ```jsx
+   ```js
    import { useSelector, useDispatch } from 'react-redux'
    import { increment, decrement } from './features/counterSlice'
    
