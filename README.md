@@ -1,3 +1,23 @@
+//layout of app
+# Features
+- Login/Sign Up
+  - Sign In / Sign up Form
+  - redirect to Browse Page
+- Browse (after authentication)
+  - Header
+  - Main Movie
+    - Tailer in Background
+    - Title & Description
+    - MovieSuggestions
+      - MovieLists * N
+- NetFlixGPT
+  - Search Bar
+  - Movie Suggestions
+
+
+
+##fully project setup
+
 1. Create a React App with Vite
   ```bash
    npm create vite@latest my-app
@@ -119,8 +139,15 @@
    export default App
    ```
 
-9. Run the App
+9. install react router-dom
+ ```bash
+   npm i -D react-router-dom
+   ```
+
+10. Run the App
+```bash
    npm run dev
+   ```
 
          
 
