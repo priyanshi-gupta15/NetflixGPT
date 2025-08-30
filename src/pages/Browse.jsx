@@ -7,7 +7,7 @@ const Browse = () => {
 
   return (
     <div className="bg-black text-white min-h-screen p-6">
-      <h1 className="text-3xl font-bold mb-6">Browse Movies</h1>
+     
       <div className="grid grid-cols-3 gap-6">
         {movies.map((movie) => (
           <div key={movie.id} className="rounded-lg overflow-hidden">

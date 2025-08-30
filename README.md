@@ -15,6 +15,17 @@
   - Movie Suggestions
 
 
+# what we learn in this project
+  - tailwind css
+  - react router - to set up paths
+  - SinUp/SignIn page
+  - validation
+  - firebase
+  - authentication
+  - manage data in firbase
+  - redux and redux toolkit
+
+
 
 ##fully project setup
 
