@@ -27,14 +27,14 @@
 
 
 
-##fully project setup
+## fully project setup
 
 1. Create a React App with Vite
   ```bash
    npm create vite@latest my-app
    ```
 
-2.Navigate to Project & Install Dependencies
+2. Navigate to Project & Install Dependencies
  ```bash
    cd my-app
    npm install
@@ -106,7 +106,7 @@
      export const { increment, decrement, incrementByAmount } = counterSlice.actions
      export default counterSlice.reducer
     ```
-⚡ 7. Provide Store to App
+7. Provide Store to App
 
     Edit main.jsx:
     ```js
@@ -159,6 +159,16 @@
 ```bash
    npm run dev
    ```
+
+
+# firebase command
+ every time you make changes you’ll need to rebuild and redeploy.
+ ```bash
+ npm run build
+ ```
+ ```bash
+ firebase deploy --only hosting
+ ```
 
          
 
