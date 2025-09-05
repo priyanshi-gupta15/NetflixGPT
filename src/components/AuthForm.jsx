@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import Validate from "../utils/Validate";
 import { useDispatch } from "react-redux";
 import { setUser } from "../store/userSlice";
@@ -8,7 +8,7 @@ import { signIn, signUp } from "../utils/LoginAuth";
 const AuthForm = () => {
 
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
 
   
   const emailRef = useRef(null);
@@ -48,8 +48,6 @@ const AuthForm = () => {
             displayName: user.displayName || usernameRef.current.value || "",
           })
         );
-
-        navigate("/browse");
       }
     } catch (err) {
       setError(err.message);

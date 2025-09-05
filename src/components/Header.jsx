@@ -1,17 +1,45 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { useSelector } from "react-redux";
-import { auth } from "../utils/FirebaseAuth";
 import { signOut } from "firebase/auth";
+import { auth } from "../utils/FirebaseAuth";
+import { onAuthStateChanged } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setUser, clearUser } from "../store/userSlice";
+import { useEffect } from "react";
 
 const Header = () => {
   const user = useSelector((state) => state.user.user); // ✅ get user from redux
+
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
+
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        dispatch(
+          setUser({
+            uid: user.uid,
+            email: user.email,
+            displayName: user.displayName,
+          })
+        );
+        navigate("/browse"); // redirect if logged in
+      } else {
+        dispatch(clearUser());
+        navigate("/"); // redirect if logged out
+      }
+     
+    });
+    // unsubscribe the user  to unmount the component
+    return () => unsubscribe();
+  }, [dispatch, navigate]);
 
   // Handle Sign Out
   const handleSignOut = async () => {
     try {
       await signOut(auth);
-      navigate("/"); // redirect after sign out
+      // navigate("/"); // redirect after sign out //alredy redirect from app
     } catch (error) {
       console.error("Error signing out:", error.message);
     }

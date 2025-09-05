@@ -1,22 +1,40 @@
+import useNowPlaying from "../hooks/useNowPlaying";
+import Banner from "../components/Banner";
+
+
 const Browse = () => {
-  const movies = [
-    { id: 1, title: "Stranger Things", img: "https://placehold.co/300x400" },
-    { id: 2, title: "Wednesday", img: "https://placehold.co/300x400" },
-    { id: 3, title: "Money Heist", img: "https://placehold.co/300x400" },
-  ];
+  useNowPlaying();
 
   return (
-    <div className="bg-black text-white min-h-screen p-6">
-     
-      <div className="grid grid-cols-3 gap-6">
-        {movies.map((movie) => (
-          <div key={movie.id} className="rounded-lg overflow-hidden">
-            <img src={movie.img} alt={movie.title} className="w-full h-auto" />
-            <h2 className="mt-2 text-lg">{movie.title}</h2>
-          </div>
-        ))}
+    <>
+      {/* 
+      Roadmap for Browse Page
+
+ Banner with fallback video/image
+
+ Fetch & store multiple movie categories in Redux
+
+ MovieRow UI (horizontal scroll)
+
+ Add skeleton loader for movies until data loads
+
+ (Optional) Clicking a movie → show trailer modal
+      
+      
+      layout
+        -Main container(banner)
+         - tailer  featured banner
+         - title Description, Play, More Info
+      -Secondary container(movie rows)
+      - row of movies - 10 crousel
+      -more categories
+      -footer */}
+
+      <div className="bg-black">
+        <Banner />
+        {/* Movie Rows */}
       </div>
-    </div>
+    </>
   );
 };
 
