@@ -7,6 +7,7 @@ const VideoBackground = ({ movieId, fallbackBackdrop }) => {
   useEffect(() => {
     const fetchTrailer = async () => {
       try {
+        //
         const res = await fetch(
           `${BASE_URL}/movie/${movieId}/videos`,
           API_OPTIONS
