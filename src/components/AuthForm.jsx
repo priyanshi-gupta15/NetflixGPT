@@ -57,9 +57,9 @@ const AuthForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="relative bg-black/80 p-10 rounded-lg w-full max-w-md text-white my-16"
+      className="relative bg-black/80 p-6 sm:p-8 md:p-10 rounded-lg w-full max-w-sm sm:max-w-md md:max-w-lg text-white my-8 sm:my-12 md:my-16 mx-4 sm:mx-auto"
     >
-      <h2 className="text-3xl font-bold mb-6">
+      <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center">
         {isSignUp ? "Sign Up" : "Sign In"}
       </h2>
 
@@ -69,7 +69,7 @@ const AuthForm = () => {
           type="text"
           ref={usernameRef}
           placeholder="Username"
-          className="w-full p-3 mb-4 rounded border border-gray-600 bg-gray-700/50 focus:outline-none focus:border-red-500"
+          className="w-full p-3 mb-3 sm:mb-4 rounded border border-gray-600 bg-gray-700/50 focus:outline-none focus:border-red-500 text-sm sm:text-base"
         />
       )}
 
@@ -78,7 +78,7 @@ const AuthForm = () => {
         ref={emailRef}
         type="email"
         placeholder="Email or mobile number"
-        className="w-full p-3 mb-2 rounded border border-gray-600 bg-gray-700/50 focus:outline-none focus:border-red-500"
+        className="w-full p-3 mb-2 rounded border border-gray-600 bg-gray-700/50 focus:outline-none focus:border-red-500 text-sm sm:text-base"
       />
 
       {/* Password */}
@@ -86,47 +86,49 @@ const AuthForm = () => {
         ref={passwordRef}
         type="password"
         placeholder="Password"
-        className="w-full p-3 mb-2 rounded border border-gray-600 bg-gray-700/50 focus:outline-none focus:border-red-500"
+        className="w-full p-3 mb-2 rounded border border-gray-600 bg-gray-700/50 focus:outline-none focus:border-red-500 text-sm sm:text-base"
       />
 
       {/* Error message */}
-      {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
+      {error && (
+        <p className="text-red-500 text-xs sm:text-sm mb-3 sm:mb-4">{error}</p>
+      )}
 
       {/* Submit button */}
       <button
         type="submit"
-        className="w-full bg-red-600 hover:bg-red-700 text-white py-3 rounded font-semibold transition"
+        className="w-full bg-red-600 hover:bg-red-700 text-white py-2.5 sm:py-3 rounded font-semibold text-sm sm:text-base transition"
       >
         {isSignUp ? "Sign Up" : "Sign In"}
       </button>
 
       {/* OR Divider */}
-      <div className="flex items-center my-6">
+      <div className="flex items-center my-4 sm:my-6">
         <hr className="flex-grow border-gray-600" />
-        <span className="px-2 text-gray-400">OR</span>
+        <span className="px-2 text-gray-400 text-xs sm:text-sm">OR</span>
         <hr className="flex-grow border-gray-600" />
       </div>
 
       {/* Sign-in Code button */}
       <button
         type="button"
-        className="w-full bg-gray-700 hover:bg-gray-600 text-white py-3 rounded font-medium transition"
+        className="w-full bg-gray-700 hover:bg-gray-600 text-white py-2.5 sm:py-3 rounded font-medium text-sm sm:text-base transition"
       >
         Use a sign-in code
       </button>
 
       {/* Forgot password */}
-      <div className="mt-4 text-center">
+      <div className="mt-3 sm:mt-4 text-center">
         <Link
           to="/forgot-password"
-          className="text-sm text-gray-300 hover:underline"
+          className="text-xs sm:text-sm text-gray-300 hover:underline"
         >
           Forgot password?
         </Link>
       </div>
 
       {/* Remember me + Switch Sign Up/Sign In */}
-      <div className="flex justify-between items-center mt-4 text-sm text-gray-300">
+      <div className="flex flex-col sm:flex-row justify-between items-center mt-3 sm:mt-4 text-xs sm:text-sm text-gray-300 gap-2">
         <label className="flex items-center space-x-2">
           <input type="checkbox" className="w-4 h-4" />
           <span>Remember me</span>
@@ -156,7 +158,7 @@ const AuthForm = () => {
       </div>
 
       {/* Captcha info */}
-      <p className="text-xs text-gray-500 mt-6">
+      <p className="text-xs text-gray-500 mt-4 sm:mt-6 text-center leading-snug">
         This page is protected by Google reCAPTCHA to ensure you're not a bot.{" "}
         <span className="text-blue-400 hover:underline cursor-pointer">
           Learn more.

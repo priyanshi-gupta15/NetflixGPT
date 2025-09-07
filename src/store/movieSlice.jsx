@@ -12,17 +12,17 @@ const movieSlice = createSlice({
     // Add other state properties as needed
   },
   reducers: {
-    setNowPlayingMovies: (state, action) => {
-      state.nowPlayingMovies = action.payload;
+    setNowPlaying: (state, action) => {
+      state.nowPlaying = action.payload;
     },
     setPopular: (state, action) => {
-      state.movies = action.payload;
+      state.popular = action.payload;
     },
     setTopRated: (state, action) => {
-      state.genres = action.payload;
+      state.topRated = action.payload;
     },
-    setUpComing: (state, action) => {
-      state.selectedGenre = action.payload;
+    setUpcoming: (state, action) => {
+      state.upcoming = action.payload;
     },
     setLoading: (state, action) => {
       state.loading = action.payload;
@@ -34,10 +34,10 @@ const movieSlice = createSlice({
 });
 
 export const {
-  setNowPlayingMovies,
+  setNowPlaying,
   setPopular,
   setTopRated,
-  setUpComing,
+  setUpcoming,
   setLoading,
   setError,
 } = movieSlice.actions;

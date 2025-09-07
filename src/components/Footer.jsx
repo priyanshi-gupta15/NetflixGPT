@@ -1,8 +1,9 @@
-// src/components/Footer.jsx
+import { Link } from "react-router-dom";
+
 const Footer = () => {
   return (
-    <footer className="bg-black text-gray-400 py-10 ">
-      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+    <footer className="bg-black text-gray-400 py-10">
+      <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
         {/* About Section */}
         <div>
           <h2 className="text-white text-lg font-semibold mb-3">About Us</h2>
@@ -18,19 +19,27 @@ const Footer = () => {
           <h2 className="text-white text-lg font-semibold mb-3">Quick Links</h2>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="/browse" className="hover:underline">
+              <Link
+                to="/browse"
+                className="hover:underline"
+                aria-label="Browse Movies"
+              >
                 Browse
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/login" className="hover:underline">
+              <Link
+                to="/login"
+                className="hover:underline"
+                aria-label="Sign In"
+              >
                 Sign In
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="/" className="hover:underline">
+              <Link to="/" className="hover:underline" aria-label="Home Page">
                 Home
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

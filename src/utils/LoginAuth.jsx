@@ -12,7 +12,7 @@ export const signUp = async (email, password) => {
       email,
       password
     );
-    console.log("User signed up:", userCredential.user);
+    
     return userCredential.user;
   } catch (error) {
     console.error("Error signing up:", error.message);
@@ -28,7 +28,7 @@ export const signIn = async (email, password) => {
       email,
       password
     );
-    console.log("User signed in:", userCredential.user);
+
     return userCredential.user;
   } catch (error) {
     console.error("Error signing in:", error.message);

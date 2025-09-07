@@ -9,15 +9,23 @@ import Login from "./pages/Login";
 import Browse from "./pages/Browse";
 
 import Footer from "./components/Footer";
+import GptSearch from "./components/GptSearch";
 
 const AppLayout = () => (
-  <>
-    <Provider store={appStore}>
+  <Provider store={appStore}>
+    <div className="flex flex-col min-h-screen">
+      {/* Header */}
       <Header />
-      <Outlet />
+
+      {/* Main content takes available space */}
+      <main className="flex-grow">
+        <Outlet />
+      </main>
+
+      {/* Footer always at bottom */}
       <Footer />
-    </Provider>
-  </>
+    </div>
+  </Provider>
 );
 
 const appRouter = createBrowserRouter([
@@ -28,6 +36,7 @@ const appRouter = createBrowserRouter([
       { path: "/", element: <Home /> },
       { path: "/browse", element: <Browse /> },
       { path: "/login", element: <Login /> },
+      { path: "/gpt", element: <GptSearch /> }
     ],
   },
 ]);

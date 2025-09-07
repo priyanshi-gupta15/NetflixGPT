@@ -1,7 +1,5 @@
-// src/components/VideoBackground.jsx
 import React, { useEffect, useState } from "react";
-
-const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+import { API_OPTIONS, BASE_URL } from "../utils/constant";
 
 const VideoBackground = ({ movieId, fallbackBackdrop }) => {
   const [trailerKey, setTrailerKey] = useState(null);
@@ -10,7 +8,8 @@ const VideoBackground = ({ movieId, fallbackBackdrop }) => {
     const fetchTrailer = async () => {
       try {
         const res = await fetch(
-          `https://api.themoviedb.org/3/movie/${movieId}/videos?api_key=${API_KEY}`
+          `${BASE_URL}/movie/${movieId}/videos`,
+          API_OPTIONS
         );
         const data = await res.json();
 
@@ -42,7 +41,7 @@ const VideoBackground = ({ movieId, fallbackBackdrop }) => {
         <img
           src={`https://image.tmdb.org/t/p/original${fallbackBackdrop}`}
           alt="Movie backdrop"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-center sm:object-top"
         />
       )}
     </div>
